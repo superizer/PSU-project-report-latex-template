@@ -731,7 +731,8 @@ wish to left align your text}
 {
     %\rule{\textwidth}{1pt}
     \vspace{1ex}
-    \centering
+    \raggedleft
+    %\centering
 } % before-code
 [
 \hrule height .7pt
