@@ -727,15 +727,16 @@ wish to left align your text}
 [block] % shape
 {\bfseries\large} % format
 % {\filcenter\chaptertitlename \ \thechapter} % label
-{\thechapter.} % label
+{} % label
 {.3em} % sep
 {
     %\rule{\textwidth}{1pt}
     \vspace{1ex}
-    \centering
+    \raggedleft
+    %\centering
 } % before-code
 [
-%{\titlerule[.7pt]}
+{\titlerule[.7pt]}
 \vspace{1em}%
 ] % after-code
 \titlespacing{\chapter}{0pt}{-20pt}{0pt}
@@ -752,6 +753,26 @@ wish to left align your text}
 \usepackage{indentfirst}
 \setcounter{secnumdepth}{3}
 
+
+\newcommand{\tocformat}{
+\titleformat
+{\chapter} % command
+[block] % shape
+{\bfseries\large} % format
+% {\filcenter\chaptertitlename \ \thechapter} % label
+{\thechapter.} % label
+{.3em} % sep
+{
+    %\rule{\textwidth}{1pt}
+    \vspace{1ex}
+    \centering
+} % before-code
+[
+%{\titlerule[.7pt]}
+\vspace{1em}%
+] % after-code
+}
+
 % ***************************** Header Formatting ******************************
 % Custom Header with Chapter Number, Page Number and Section Numbering
 
@@ -762,7 +783,7 @@ wish to left align your text}
 \pagestyle{fancy}
 %
 \fancyhf{}
-\fancyhead[LE,RO]{\thepage}
+\fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 }
@@ -776,7 +797,7 @@ wish to left align your text}
 \fancyhead{}
 \fancyhf{}
 
-\fancyhead[LE,RO]{\thepage}
+\fancyfoot[C]{\thepage}
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0pt}
 }
@@ -809,7 +830,7 @@ wish to left align your text}
   \renewcommand{\thepage}{\Roman{page}}}
 {\newpage\renewcommand{\thepage}{\arabic{page}}}
 % new define
-\renewcommand{\thepage}{(\arabic{page})}
+\renewcommand{\thepage}{\roman{page}}
 
 % ******************************* Appendices **********************************
 % Appending the appendix name to the letter in TOC
