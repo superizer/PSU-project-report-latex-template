@@ -494,32 +494,16 @@ supported!}
 	%\usepackage[laksaman]{fonts-tlwg}
 \else
 	\ifxetex
+
 		\usepackage{fontspec}
-		%\usepackage{xunicode}
-		\usepackage{xltxtra}
-		\usepackage{polyglossia}
-		
-		%\defaultfontfeatures{Scale=1.23}
-		
-		\ifsetTH
+		\usepackage{polyglossia} % Babel replacement for XeTeX
+		\usepackage{xunicode}
+		\usepackage{xltxtra} % For using XeTeX within LaTeX
 		\XeTeXlinebreaklocale "th_TH"
-		\setdefaultlanguage{thai}
-		\defaultfontfeatures{Scale=1.5}
-		\else
-		\setdefaultlanguage{english}
-		\defaultfontfeatures{Scale=1.5}
-		\fi
-		
-		\XeTeXlinebreakskip = 0pt plus 1pt
-		
-		
-		% for laksaman font
-%		\setmainfont{Laksaman}
-%		\defaultfontfeatures{Scale=MatchLowercase}
-%		\newfontfamily{\thaifont}[Script=thai]{Laksaman}	
-			
-		\setmainfont{TH Sarabun New}
-		\newfontfamily{\thaifont}[Script=thai]{TH Sarabun New}
+		\XeTeXlinebreakskip = 0pt plus 1pt   %
+		\setmainfont[Scale=1.0]{TH Sarabun New}
+		\newfontfamily{\thaifont}[Script=Thai]{TH Sarabun New:script=thai}
+		\font\mf="TH Sarabun New:script=thai" at 16pt
 	\else
 	\fi
 \fi
