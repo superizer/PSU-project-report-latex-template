@@ -708,16 +708,19 @@ wish to left align your text}
 \usepackage{titlesec}
 \titleformat
 {\chapter} % command
-[display] % shape
+[block] % shape
 {\bfseries\large} % format
-{\filcenter\chaptertitlename \ \thechapter} % label
-{-1em} % sep
+% {\filcenter\chaptertitlename \ \thechapter} % label
+{} % label
+{.3em} % sep
 {
     %\rule{\textwidth}{1pt}
     \vspace{1ex}
-    \centering
+    \raggedleft
+    %\centering
 } % before-code
 [
+{\titlerule[.7pt]}
 \vspace{1em}%
 ] % after-code
 \titlespacing{\chapter}{0pt}{-20pt}{0pt}
@@ -734,6 +737,26 @@ wish to left align your text}
 \usepackage{indentfirst}
 \setcounter{secnumdepth}{3}
 
+
+\newcommand{\tocformat}{
+\titleformat
+{\chapter} % command
+[block] % shape
+{\bfseries\large} % format
+% {\filcenter\chaptertitlename \ \thechapter} % label
+{\thechapter.} % label
+{.3em} % sep
+{
+    %\rule{\textwidth}{1pt}
+    \vspace{1ex}
+    \centering
+} % before-code
+[
+%{\titlerule[.7pt]}
+\vspace{1em}%
+] % after-code
+}
+
 % ***************************** Header Formatting ******************************
 % Custom Header with Chapter Number, Page Number and Section Numbering
 
@@ -744,7 +767,7 @@ wish to left align your text}
 \pagestyle{fancy}
 %
 \fancyhf{}
-\fancyhead[LE,RO]{\thepage}
+\fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 }
@@ -752,13 +775,13 @@ wish to left align your text}
 \setlength{\headheight}{14.5pt}
 \setlength{\topmargin}{-.2in}
 \setlength{\headsep}{.5in}
-%\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\headrulewidth}{0.5pt}
 %\renewcommand{\footrulewidth}{0pt}
 \fancypagestyle{plain}{
 \fancyhead{}
 \fancyhf{}
 
-\fancyhead[LE,RO]{\thepage}
+\fancyfoot[C]{\thepage}
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0pt}
 }
@@ -791,7 +814,7 @@ wish to left align your text}
   \renewcommand{\thepage}{\Roman{page}}}
 {\newpage\renewcommand{\thepage}{\arabic{page}}}
 % new define
-\renewcommand{\thepage}{(\arabic{page})}
+\renewcommand{\thepage}{\roman{page}}
 
 % ******************************* Appendices **********************************
 % Appending the appendix name to the letter in TOC
@@ -1142,6 +1165,8 @@ wish to left align your text}
 % To compute the free vertical space in Title page
 \begin{singlespace}
 %\begin{flushleft}
+\chapter*{หนังสือรับรองความเป็นเอกลักษณ์}
+\addcontentsline{toc}{chapter}{หนังสือรับรองความเป็นเอกลักษณ์}
 \setlength{\parindent}{0in}
 \ifsetTH
 {ผู้จัดทำที่ได้ลงนามท้ายนี้ ขอรับรองว่ารายงานฉบับนี้เป็นรายงานที่มีความเป็นเอกลักษณ์ โดยที่ผู้จัดทำไม่ได้มีการคัดลอกมาจากที่ใดเลย เนื้อหาทั้งหมดถูกรวบรวมจากการพัฒนาในขั้นตอนต่างๆ ของการจัดทำโครงงาน หากมีส่วนใดที่จำเป็นต้องนำเอาข้อความจากผลงานของผู้อื่น หรือบุคคลอื่นใดที่ไม่ใช่ตัวข้าพเจ้า ข้าพเจ้าได้ทำอ้างอิงถึงเอกสารเหล่านั้นไว้อย่างเหมาะสม และขอรับรองว่ารายงานฉบับนี้ไม่เคยเสนอต่อสถาบันใดมาก่อน}
@@ -1213,10 +1238,10 @@ wish to left align your text}
 \cleardoublepage
 \setsinglecolumn
 \ifsetTH
-\chapter*{\centering ประวัติผู้เขียน}
+\chapter*{ประวัติผู้เขียน}
 \addcontentsline{toc}{chapter}{ประวัติผู้เขียน}
 \else
-\chapter*{\centering VITAE}
+\chapter*{VITAE}
 \addcontentsline{toc}{chapter}{VITAE}
 \fi
 
@@ -1231,10 +1256,10 @@ wish to left align your text}
 \cleardoublepage
 \setsinglecolumn
 \ifsetTH
-\chapter*{\centering กิตติกรรมประกาศ}
+\chapter*{กิตติกรรมประกาศ}
 \addcontentsline{toc}{chapter}{กิตติกรรมประกาศ}
 \else
-\chapter*{\centering Acknowledgements}
+\chapter*{Acknowledgements}
 \addcontentsline{toc}{chapter}{Acknowledgements}
 \fi
 
@@ -1260,7 +1285,7 @@ wish to left align your text}
 \vspace{2em}
 \begingroup
 \let\clearpage\relax
-\chapter*{\centering ABSTRACT}
+\chapter*{ABSTRACT}
 \addcontentsline{toc}{chapter}{ABSTRACT}
 %\thispagestyle{empty}
 \endgroup
