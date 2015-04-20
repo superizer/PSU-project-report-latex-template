@@ -734,6 +734,7 @@ wish to left align your text}
     \centering
 } % before-code
 [
+\hrule height .7pt
 \vspace{1em}%
 ] % after-code
 \titlespacing{\chapter}{0pt}{-20pt}{0pt}
@@ -1158,6 +1159,8 @@ wish to left align your text}
 % To compute the free vertical space in Title page
 \begin{singlespace}
 %\begin{flushleft}
+\chapter*{หนังสือรับรองความเป็นเอกลักษณ์}
+\addcontentsline{toc}{chapter}{หนังสือรับรองความเป็นเอกลักษณ์}
 \setlength{\parindent}{0in}
 \ifsetTH
 {ผู้จัดทำที่ได้ลงนามท้ายนี้ ขอรับรองว่ารายงานฉบับนี้เป็นรายงานที่มีความเป็นเอกลักษณ์ โดยที่ผู้จัดทำไม่ได้มีการคัดลอกมาจากที่ใดเลย เนื้อหาทั้งหมดถูกรวบรวมจากการพัฒนาในขั้นตอนต่างๆ ของการจัดทำโครงงาน หากมีส่วนใดที่จำเป็นต้องนำเอาข้อความจากผลงานของผู้อื่น หรือบุคคลอื่นใดที่ไม่ใช่ตัวข้าพเจ้า ข้าพเจ้าได้ทำอ้างอิงถึงเอกสารเหล่านั้นไว้อย่างเหมาะสม และขอรับรองว่ารายงานฉบับนี้ไม่เคยเสนอต่อสถาบันใดมาก่อน}
@@ -1229,10 +1232,10 @@ wish to left align your text}
 \cleardoublepage
 \setsinglecolumn
 \ifsetTH
-\chapter*{\centering ประวัติผู้เขียน}
+\chapter*{ประวัติผู้เขียน}
 \addcontentsline{toc}{chapter}{ประวัติผู้เขียน}
 \else
-\chapter*{\centering VITAE}
+\chapter*{VITAE}
 \addcontentsline{toc}{chapter}{VITAE}
 \fi
 
@@ -1247,10 +1250,10 @@ wish to left align your text}
 \cleardoublepage
 \setsinglecolumn
 \ifsetTH
-\chapter*{\centering กิตติกรรมประกาศ}
+\chapter*{กิตติกรรมประกาศ}
 \addcontentsline{toc}{chapter}{กิตติกรรมประกาศ}
 \else
-\chapter*{\centering Acknowledgements}
+\chapter*{Acknowledgements}
 \addcontentsline{toc}{chapter}{Acknowledgements}
 \fi
 
@@ -1276,7 +1279,7 @@ wish to left align your text}
 \vspace{2em}
 \begingroup
 \let\clearpage\relax
-\chapter*{\centering ABSTRACT}
+\chapter*{ABSTRACT}
 \addcontentsline{toc}{chapter}{ABSTRACT}
 %\thispagestyle{empty}
 \endgroup
