@@ -724,18 +724,18 @@ wish to left align your text}
 \usepackage{titlesec}
 \titleformat
 {\chapter} % command
-[display] % shape
+[block] % shape
 {\bfseries\large} % format
-{\filcenter\chaptertitlename \ \thechapter} % label
-{-1em} % sep
+% {\filcenter\chaptertitlename \ \thechapter} % label
+{\thechapter.} % label
+{.3em} % sep
 {
     %\rule{\textwidth}{1pt}
     \vspace{1ex}
-    \raggedleft
-    %\centering
+    \centering
 } % before-code
 [
-\hrule height .7pt
+%{\titlerule[.7pt]}
 \vspace{1em}%
 ] % after-code
 \titlespacing{\chapter}{0pt}{-20pt}{0pt}
@@ -770,7 +770,7 @@ wish to left align your text}
 \setlength{\headheight}{14.5pt}
 \setlength{\topmargin}{-.2in}
 \setlength{\headsep}{.5in}
-%\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\headrulewidth}{0.5pt}
 %\renewcommand{\footrulewidth}{0pt}
 \fancypagestyle{plain}{
 \fancyhead{}
