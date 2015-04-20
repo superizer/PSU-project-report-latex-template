@@ -503,10 +503,10 @@ supported!}
 		
 		\ifsetTH
 		\XeTeXlinebreaklocale "th_TH"
-		\setdefaultlanguage{thai}
+		% \setdefaultlanguage{thai}
 		\defaultfontfeatures{Scale=1.5}
 		\else
-		% \setdefaultlanguage{english}
+		\setdefaultlanguage{english}
 		\defaultfontfeatures{Scale=1.5}
 		\fi
 		
