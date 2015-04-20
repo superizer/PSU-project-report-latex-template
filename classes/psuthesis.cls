@@ -1109,24 +1109,39 @@ wish to left align your text}
 	\centering{
 		\textbf{อาจารย์ที่ปรึกษาโครงงาน}\vspace*{1em}\\
 		{...............................................................}\vspace*{1em}\\
-		(\@majoradvisor)\vspace*{1em}\\
+		(\@majoradvisor)\vspace*{2em}\\
 		
-		\textbf{คณะกรรมการสอบ}\vspace*{1em}\\
+		\textbf{คณะกรรมการสอบ}\vspace*{2em}\\
 	}
 		
-		\begin{tabular*}{\textwidth}{c c c}
-		{.................................................} & 
-		{.................................................} & 
-		{.................................................} \\
-		(\@committeeOne) &
-		(\@committeeTwo) &
-		(\@committeeThree) \\ \vspace*{1em} \\ 
-		{.................................................} & 
-		{.................................................} & 
-		{.................................................} \\
-		(\@committeeFour) &
-		(\@committeeFive) &
-		(\@committeeSix) \\ \vspace*{1em} \\ 
+		\begin{tabular*}{\textwidth}{c >{\centering}m{.34\textwidth} c}
+		\ifthenelse{\equal{\@committeeOne}{}}{
+		}{{.................................................}} & 
+		\ifthenelse{\equal{\@committeeTwo}{}}{
+		}{{.................................................}} & 
+		\ifthenelse{\equal{\@committeeThree}{}}{
+		}{{.................................................}} \\
+		
+		\ifthenelse{\equal{\@committeeOne}{}}{
+		}{(\@committeeOne)} &
+		\ifthenelse{\equal{\@committeeTwo}{}}{
+		}{(\@committeeTwo)} &
+		\ifthenelse{\equal{\@committeeThree}{}}{
+		}{(\@committeeThree)} \\ \vspace*{1em} \\ 
+		
+		\ifthenelse{\equal{\@committeeFour}{}}{
+		}{{.................................................}} & 
+		\ifthenelse{\equal{\@committeeFive}{}}{
+		}{{.................................................}} & 
+		\ifthenelse{\equal{\@committeeSix}{}}{
+		}{{.................................................}} \\
+		
+		\ifthenelse{\equal{\@committeeFour}{}}{
+		}{(\@committeeFour)} &
+		\ifthenelse{\equal{\@committeeFive}{}}{
+		}{(\@committeeFive)} &
+		\ifthenelse{\equal{\@committeeSix}{}}{
+		}{(\@committeeSix)} \\ \vspace*{1em} \\ 
 		\end{tabular*}
 
 \end{flushleft}
