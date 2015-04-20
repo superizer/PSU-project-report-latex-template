@@ -5,7 +5,7 @@
 %% A PSU thesis LaTeX template for Prince of Songkla University               %%
 %%                                                                            %%
 %% Version: v1.0.0                                                            %%
-%% Authors: Thanathip Limna                                                   %%
+%% Authors: Thanathip Limna, Attasuntorn Traisuwan                            %%
 %% Date: 2013/11/16 (inception)                                               %%
 %% License: MIT License (c) 2013 Krishna Kumar                                %%
 %% Based on: https://github.com/kks32/phd-thesis-template                     %%
@@ -827,46 +827,48 @@ wish to left align your text}
 % construction of the title page and other preamble.
 
 % The title in thai name
-\newcommand{\@titleTH}{}
-\newcommand{\titleTH}[1]{\renewcommand{\@titleTH}{#1}}
-\newcommand{\@authorTH}{}
-\newcommand{\authorTH}[1]{\renewcommand{\@authorTH}{#1}}
+%\newcommand{\@titleTH}{}
+%\newcommand{\titleTH}[1]{\renewcommand{\@titleTH}{#1}}
+%\newcommand{\@authorTH}{}
+%\newcommand{\authorTH}[1]{\renewcommand{\@authorTH}{#1}}
 \newcommand{\@authorTitle}{}
 \newcommand{\authorTitle}[1]{\renewcommand{\@authorTitle}{#1}}
-\newcommand{\@authorTitleTH}{}
-\newcommand{\authorTitleTH}[1]{\renewcommand{\@authorTitleTH}{#1}}
+\newcommand{\@studentId}{}
+\newcommand{\studentId}[1]{\renewcommand{\@studentId}{#1}}
+%\newcommand{\@authorTitleTH}{}
+%\newcommand{\authorTitleTH}[1]{\renewcommand{\@authorTitleTH}{#1}}
 
 % The year and term the degree will be officially conferred
-\newcommand{\@degreeyear}{\the\year}
-\newcommand{\degreeyear}[1]{\renewcommand{\@degreeyear}{#1}}
+%\newcommand{\@degreeyear}{\the\year}
+%\newcommand{\degreeyear}[1]{\renewcommand{\@degreeyear}{#1}}
 
 % Academic year
 \newcommand{\@academicyear}{\the\year}
 \newcommand{\academicyear}[1]{\renewcommand{\@academicyear}{#1}}
 
 % Academic year Thai bs
-\newcommand{\@academicyearTH}{\the\year}
-\newcommand{\academicyearTH}[1]{\renewcommand{\@academicyearTH}{#1}}
+%\newcommand{\@academicyearTH}{\the\year}
+%\newcommand{\academicyearTH}[1]{\renewcommand{\@academicyearTH}{#1}}
 
 % The full (unabbreviated) name of the degree
 \newcommand{\@degree}{}
 \newcommand{\degree}[1]{\renewcommand{\@degree}{#1}}
 
-\newcommand{\@degreeTH}{}
-\newcommand{\degreeTH}[1]{\renewcommand{\@degreeTH}{#1}}
+%\newcommand{\@degreeTH}{}
+%\newcommand{\degreeTH}[1]{\renewcommand{\@degreeTH}{#1}}
 
 \newcommand{\@majorProgram}{}
 \newcommand{\majorProgram}[1]{\renewcommand{\@majorProgram}{#1}}
 
-\newcommand{\@majorProgramTH}{}
-\newcommand{\majorProgramTH}[1]{\renewcommand{\@majorProgramTH}{#1}}
+%\newcommand{\@majorProgramTH}{}
+%\newcommand{\majorProgramTH}[1]{\renewcommand{\@majorProgramTH}{#1}}
 
 
 % The name of your University
-\newcommand{\@university}{Prince of Songkla University}
+\newcommand{\@university}{มหาวิทยาลัยสงขลานครินทร์}
 \newcommand{\university}[1]{\renewcommand{\@university}{#1}}
-\newcommand{\@universityTH}{มหาวิทยาลัยสงขลานครินทร์}
-\newcommand{\universityTH}[1]{\renewcommand{\@universityTH}{#1}}
+%\newcommand{\@universityTH}{มหาวิทยาลัยสงขลานครินทร์}
+%\newcommand{\universityTH}[1]{\renewcommand{\@universityTH}{#1}}
 
 % Defining the crest
 \newcommand{\@crest}{\includegraphics[width=2.3cm]{classes/logo/psubw.png}}
@@ -902,9 +904,6 @@ wish to left align your text}
 \newcommand{\@majoradvisor}{}
 \newcommand{\majoradvisor}[1]{\renewcommand{\@majoradvisor}{#1}}
 
-\newcommand{\@coadvisor}{}
-\newcommand{\coadvisor}[1]{\renewcommand{\@coadvisor}{#1}}
-
 \newcommand{\@committeeOne}{}
 \newcommand{\committeeOne}[1]{\renewcommand{\@committeeOne}{#1}}
 
@@ -920,8 +919,11 @@ wish to left align your text}
 \newcommand{\@committeeFive}{}
 \newcommand{\committeeFive}[1]{\renewcommand{\@committeeFive}{#1}}
 
-\newcommand{\@deanOfGraduateSchool}{}
-\newcommand{\deanOfGraduateSchool}[1]{\renewcommand{\@deanOfGraduateSchool}{#1}}
+\newcommand{\@committeeSix}{}
+\newcommand{\committeeSix}[1]{\renewcommand{\@committeeSix}{#1}}
+
+\newcommand{\@deanOfCoE}{}
+\newcommand{\deanOfCoE}[1]{\renewcommand{\@deanOfCoE}{#1}}
 
 % These macros define an environment for front matter that is always
 % single column even in a double-column document.
@@ -1066,122 +1068,58 @@ wish to left align your text}
 \begin{flushleft}
 
 		\begin{tabular*}{\textwidth}{@{}p{.2\textwidth} P{.8\textwidth}@{}}
-		\ifsetTH
-		\textbf{ชื่อวิทยานิพนธ์} & \@titleTH \\
-		\textbf{ผู้เขียน}& \@authorTitleTH\@authorTH \\
-		\textbf{สาขาวิชา}& \@majorProgramTH \\
-		\else
-		\textbf{Thesis Title} & \@title \\
-		\textbf{Author}& \@authorTitle\@author \\
-		\textbf{Major Program}& \@majorProgram \\
-		\fi
+%		\ifsetTH
+		\textbf{ชื่อโครงงาน} & \textbf{\@title} \\
+		\textbf{ผู้จัดทำ}& \textbf{\@authorTitle\@author} \hspace{1cm} \textbf{รหัส} \hspace{1em} \textbf{\@studentId} \\
+		\textbf{สาขาวิชา}& \textbf{\@majorProgram} \\
+		\textbf{ปีการศึกษา}& \textbf{\@academicyear} \\
+%		\else
+%		\textbf{Thesis Title} & \@title \\
+%		\textbf{Author}& \@authorTitle\@author \\
+%		\textbf{Major Program}& \@majorProgram \\
+%		\fi
 		\end{tabular*}
 		
 \vspace{1ex}
 \hrule height .7pt
 \vspace{1em}
-		\ifsetTH
-		\begin{tabular*}{\textwidth}{@{}p{.5\textwidth} p{.5\textwidth}@{}}
+	\centering{
+		\textbf{อาจารย์ที่ปรึกษาโครงงาน}\vspace*{1em}\\
+		{...............................................................}\vspace*{1em}\\
+		(\@majoradvisor)\vspace*{1em}\\
 		
-		\textbf{อาจารย์ที่ปรึกษาวิทยานิพนธ์หลัก}  & \textbf{คณะกรรมการสอบ} \\  \vspace*{1em} \\ 
-		{...............................................................} & 
-		{...............................................ประธานกรรมการ} \\ 
-		(\@majoradvisor)\vspace*{1em}  & (\@committeeOne) \\  \vspace*{1em} \\ 
+		\textbf{คณะกรรมการสอบ}\vspace*{1em}\\
+	}
 		
-		&
-		{...........................................................กรรมการ} \\
-		\ifthenelse{\equal{\@coadvisor}{}}{
-		}{\textbf{อาจารย์ที่ปรึกษาวิทยานิพนธ์ร่วม}}
-		& (\@committeeTwo) \\ \vspace*{1em} \\
-		\ifthenelse{\equal{\@coadvisor}{}}{
-		}{
-		{...............................................................}  
-		}
-		&
-		{...........................................................กรรมการ} \\
-		\ifthenelse{\equal{\@coadvisor}{}}{
-		}{ (\@coadvisor) }
-		& (\@committeeThree) \\ \vspace*{1em} \\
-		
-		
-		\ifthenelse{\equal{\@committeeFour}{}}
-		{
-		\\ \\ \vspace*{1em} \\
-		
-		}{
-		& 
-		{...........................................................กรรมการ} \\
-		& (\@committeeFour) \\ \vspace*{1em} \\
-		}
-		\ifthenelse{\equal{\@committeeFive}{}}
-		{
-		\\ \\ \vspace*{1em} \\
-		
-		}{
-		& 
-		{...........................................................กรรมการ} \\
-		& (\@committeeFive) \\ 
-		}
+		\begin{tabular*}{\textwidth}{c c c}
+		{.................................................} & 
+		{.................................................} & 
+		{.................................................} \\
+		(\@committeeOne) &
+		(\@committeeTwo) &
+		(\@committeeThree) \\ \vspace*{1em} \\ 
+		{.................................................} & 
+		{.................................................} & 
+		{.................................................} \\
+		(\@committeeFour) &
+		(\@committeeFive) &
+		(\@committeeSix) \\ \vspace*{1em} \\ 
 		\end{tabular*}
-		
-		\else
-		
-		\begin{tabular*}{\textwidth}{@{}p{.5\textwidth} p{.5\textwidth}@{}}
-		
-		\textbf{Major Advisor:}  & \textbf{Examining Committee:} \\  \vspace*{1em} \\ 
-		{...............................................................} & 
-		{...............................................Chairperson} \\ 
-		(\@majoradvisor)\vspace*{1em}  & (\@committeeOne) \\  \vspace*{1em} \\ 
-		
-		&
-		{...............................................................} \\
-		\ifthenelse{\equal{\@coadvisor}{}}{
-		}{\textbf{Co-advisor:}}
-		& (\@committeeTwo) \\ \vspace*{1em} \\
-		\ifthenelse{\equal{\@coadvisor}{}}{
-		}{
-		{...............................................................}  
-		}
-		&
-		{...............................................................} \\
-		\ifthenelse{\equal{\@coadvisor}{}}{
-		}{ (\@coadvisor) }
-		& (\@committeeThree) \\ \vspace*{1em} \\
-		
-		
-		\ifthenelse{\equal{\@committeeFour}{}}
-		{
-		\\ \\ \vspace*{1em} \\
-		
-		}{
-		& 
-		{..............................................................} \\
-		& (\@committeeFour) \\ \vspace*{1em} \\
-		}
-		\ifthenelse{\equal{\@committeeFive}{}}
-		{
-		\\ \\ \vspace*{1em} \\
-		
-		}{
-		& 
-		{...............................................................} \\
-		& (\@committeeFive) \\ 
-		}
-		\end{tabular*}
-		\fi 
 
 \end{flushleft}
 
 \vspace{5em}
-\setlength{\parindent}{1.2in}
+\setlength{\parindent}{0in}
 \ifsetTH
-{บัณฑิตวิทยาลัย~~มหาวิทยาลัยสงขลานครินทร์~~อนุมัติให้นับวิทยานิพนธ์ฉบับนี้} %\break
+\begin{flushright}
+{โครงงานนี้เป็นส่วนหนึ่งของรายวิชา Computer Engineering Project I-II ตามหลักสูตรปริญญา} %\break
+\end{flushright}
 %\setlength{\parindent}{0in}
-\ifthenelse{\equal{\@studyplan}{M1} \OR \equal{\@studyplan}{PhD1}}{
-{สำหรับการศึกษา~~ตามหลักสูตรปริญญา\@degreeTH ~~สาขาวิชา\@majorProgramTH}
-}{
-{เป็นส่วนหนึ่งของการศึกษา~~ตามหลักสูตรปริญญา\@degreeTH ~~สาขาวิชา\@majorProgramTH}
-}
+%\ifthenelse{\equal{\@studyplan}{M1} \OR \equal{\@studyplan}{PhD1}}{
+%{สำหรับการศึกษา~~ตามหลักสูตรปริญญา\@degreeTH ~~สาขาวิชา\@majorProgram}
+%}{
+{\@degree ~~สาขา\@majorProgram \@university}
+%}
 \else
 {The Graduate School, Prince of Songkla University, have approved this thesis as} %\break
 %\setlength{\parindent}{0in}
@@ -1198,9 +1136,9 @@ wish to left align your text}
 		&
 		\begin{center}
 		{..................................................................}\par 
-		(\@deanOfGraduateSchool)\par 
+		(\@deanOfCoE)
 		\ifsetTH
-		{คณบดีบัณฑิตวิทยาลัย}
+		{หัวหน้าภาควิชาวิศวกรรมคอมพิวเตอร์}
 		\else
 		{Dean of Graduate School}
 		\fi
@@ -1222,7 +1160,7 @@ wish to left align your text}
 %\begin{flushleft}
 \setlength{\parindent}{0in}
 \ifsetTH
-{ขอรับรองว่า ผลงานวิจัยนี้มาจากการศึกษาวิจัยของนักศึกษาเอง และได้แสดงความขอบคุณบุคคลที่มีส่วนเกี่ยวข้องช่วยเหลือแล้ว}
+{ผู้จัดทำที่ได้ลงนามท้ายนี้ ขอรับรองว่ารายงานฉบับนี้เป็นรายงานที่มีความเป็นเอกลักษณ์ โดยที่ผู้จัดทำไม่ได้มีการคัดลอกมาจากที่ใดเลย เนื้อหาทั้งหมดถูกรวบรวมจากการพัฒนาในขั้นตอนต่างๆ ของการจัดทำโครงงาน หากมีส่วนใดที่จำเป็นต้องนำเอาข้อความจากผลงานของผู้อื่น หรือบุคคลอื่นใดที่ไม่ใช่ตัวข้าพเจ้า ข้าพเจ้าได้ทำอ้างอิงถึงเอกสารเหล่านั้นไว้อย่างเหมาะสม และขอรับรองว่ารายงานฉบับนี้ไม่เคยเสนอต่อสถาบันใดมาก่อน}
 \else
 {This is to certify that the work here submitted is the result of the candidate's own investigations. Due acknowledgement has been made of any assistance received}
 \fi
@@ -1231,55 +1169,56 @@ wish to left align your text}
 		\begin{tabular*}{\textwidth}{@{}p{.5\textwidth} p{.5\textwidth}@{}}
 		&
 		\begin{center}
+%		..................................................................\par 
+%		(\@majoradvisor)\par 
+%		\ifsetTH
+%		{อาจารย์ที่ปรึกษาวิทยานิพนธ์}\par
+%		\else
+%		{Major Advisor}
+%		\fi
+		ผู้จัดทำ
+		\vspace{1em}\par
 		..................................................................\par 
-		(\@majoradvisor)\par 
-		\ifsetTH
-		{อาจารย์ที่ปรึกษาวิทยานิพนธ์}\par
-		\else
-		{Major Advisor}
-		\fi
-		\vspace{3em}\par
-		..................................................................\par 
-		\ifsetTH 
-		(\@authorTitleTH\@authorTH)\par
-		{นักศึกษา}\par
-		\else
+%		\ifsetTH 
 		(\@authorTitle\@author)\par
-		{Candidate}
-		\fi
+%		{นักศึกษา}\par
+%		\else
+%		(\@authorTitle\@author)\par
+%		{Candidate}
+%		\fi
 		\end{center}
 		\\
 		\end{tabular*}
 %\end{flushleft}
 \end{singlespace}
 
-\newpage
-\begin{singlespace}
-%\begin{flushleft}
-\setlength{\parindent}{0in}
-\ifsetTH
-{ข้าพเจ้าขอรับรองว่า ผลงานวิจัยนี้ไม่เคยเป็นส่วนหนึ่งในการอนุมัติปริญญาในระดับใดมาก่อน และไม่ได้ถูกใช้ในการยื่นขออนุมัติปริญญาในขณะนี้}
-\else
-{I hereby cetify that this work has not been accepted in substance for any degree, and is not being currently submitted in candidature for any degree}
-\fi
-\vspace{3em}\\
-
-		\begin{tabular*}{\textwidth}{@{}p{.5\textwidth} p{.5\textwidth}@{}}
-		&
-		\begin{center}
-		..................................................................\par 
-		\ifsetTH
-		(\@authorTitleTH\@authorTH)\par 
-		{นักศึกษา}\par
-		\else
-		(\@authorTitle\@author)\par 
-		{Candidate}\par
-		\fi
-		\end{center}
-		\\
-		\end{tabular*}
-%\end{flushleft}
-\end{singlespace}
+%\newpage
+%\begin{singlespace}
+%%\begin{flushleft}
+%\setlength{\parindent}{0in}
+%\ifsetTH
+%{ข้าพเจ้าขอรับรองว่า ผลงานวิจัยนี้ไม่เคยเป็นส่วนหนึ่งในการอนุมัติปริญญาในระดับใดมาก่อน และไม่ได้ถูกใช้ในการยื่นขออนุมัติปริญญาในขณะนี้}
+%\else
+%{I hereby cetify that this work has not been accepted in substance for any degree, and is not being currently submitted in candidature for any degree}
+%\fi
+%\vspace{3em}\\
+%
+%		\begin{tabular*}{\textwidth}{@{}p{.5\textwidth} p{.5\textwidth}@{}}
+%		&
+%		\begin{center}
+%		..................................................................\par 
+%		\ifsetTH
+%		(\@authorTitleTH\@authorTH)\par 
+%		{นักศึกษา}\par
+%		\else
+%		(\@authorTitle\@author)\par 
+%		{Candidate}\par
+%		\fi
+%		\end{center}
+%		\\
+%		\end{tabular*}
+%%\end{flushleft}
+%\end{singlespace}
 }
 
 % ****************************** VITAE ********************************
@@ -1320,11 +1259,11 @@ wish to left align your text}
 {
 \vspace{1em}
 \flushright
-\ifsetTH
-\@authorTH{} \hspace{1in}~ \\
-\else
+%\ifsetTH
+%\@authorTH{} \hspace{1in}~ \\
+%\else
 \@author{} \hspace{1in}~ \\
-\fi
+%\fi
 \vfill
 }
 
@@ -1333,15 +1272,6 @@ wish to left align your text}
 % english abstract in the thesis
 \cleardoublepage
 \setsinglecolumn
-
-\begin{flushleft}
-	\begin{tabular*}{\textwidth}{@{}p{.2\textwidth} P{.8\textwidth}@{}}
-		\textbf{Thesis Title} & {\@title} \\
-		\textbf{Author} & \@authorTitle\@author \\
-		\textbf{Major Program} & \@majorProgram \\
-		\textbf{Academic Year} & \@academicyear \\
-	\end{tabular*}
-\end{flushleft}
 
 \vspace{2em}
 \begingroup
@@ -1356,14 +1286,6 @@ wish to left align your text}
 % thai abstract in the thesis
 \cleardoublepage
 \setsinglecolumn
-\begin{flushleft}
-	\begin{tabular*}{\textwidth}{@{}p{.2\textwidth} P{.8\textwidth}@{}}
-		\textbf{ชื่อวิทยานิพนธ์} & \@titleTH \\
-		\textbf{ผู้เขียน}& \@authorTitleTH\@authorTH \\
-		\textbf{สาขาวิชา}& \@majorProgramTH \\
-		\textbf{ปีการศึกษา}& \@academicyearTH \\
-	\end{tabular*}
-\end{flushleft}
 
 \vspace{2em}
 \begingroup
