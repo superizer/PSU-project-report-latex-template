@@ -748,7 +748,7 @@ wish to left align your text}
 \titleformat{\subsubsection}
   {\normalfont\bfseries}{\thesubsubsection}{1em}{}
  
-\setlength{\parindent}{1in}
+\setlength{\parindent}{.5in}
 %\setlength{\parskip}{1em}
 \usepackage{indentfirst}
 \setcounter{secnumdepth}{3}
@@ -1092,9 +1092,9 @@ wish to left align your text}
 
 		\begin{tabular*}{\textwidth}{@{}p{.2\textwidth} P{.8\textwidth}@{}}
 %		\ifsetTH
-		\textbf{ชื่อโครงงาน} & \textbf{\@title} \\
-		\textbf{ผู้จัดทำ}& \textbf{\@authorTitle\@author} \hspace{1cm} \textbf{รหัส} \hspace{1em} \textbf{\@studentId} \\
-		\textbf{สาขาวิชา}& \textbf{\@majorProgram} \\
+		\textbf{ชื่อโครงงาน} & \textbf{\@title} \vspace{.5em} \\
+		\textbf{ผู้จัดทำ}& \textbf{\@authorTitle\@author} \hspace{1cm} \textbf{รหัส} \hspace{1em} \textbf{\@studentId} \vspace{.5em} \\
+		\textbf{สาขาวิชา}& \textbf{\@majorProgram} \vspace{.5em} \\
 		\textbf{ปีการศึกษา}& \textbf{\@academicyear} \\
 %		\else
 %		\textbf{Thesis Title} & \@title \\
@@ -1105,10 +1105,10 @@ wish to left align your text}
 		
 \vspace{1ex}
 \hrule height .7pt
-\vspace{1em}
+\vspace{2em}
 	\centering{
 		\textbf{อาจารย์ที่ปรึกษาโครงงาน}\vspace*{1em}\\
-		{...............................................................}\vspace*{1em}\\
+		{...............................................................}\vspace*{.5em}\\
 		(\@majoradvisor)\vspace*{2em}\\
 		
 		\textbf{คณะกรรมการสอบ}\vspace*{2em}\\
@@ -1174,7 +1174,7 @@ wish to left align your text}
 		&
 		\begin{center}
 		{..................................................................}\par 
-		(\@deanOfCoE)
+		(\@deanOfCoE) \vspace{1ex} \\
 		\ifsetTH
 		{หัวหน้าภาควิชาวิศวกรรมคอมพิวเตอร์}
 		\else
@@ -1198,7 +1198,7 @@ wish to left align your text}
 %\begin{flushleft}
 \chapter*{หนังสือรับรองความเป็นเอกลักษณ์}
 \addcontentsline{toc}{chapter}{หนังสือรับรองความเป็นเอกลักษณ์}
-\setlength{\parindent}{0in}
+%\setlength{\parindent}{.5in}
 \ifsetTH
 {ผู้จัดทำที่ได้ลงนามท้ายนี้ ขอรับรองว่ารายงานฉบับนี้เป็นรายงานที่มีความเป็นเอกลักษณ์ โดยที่ผู้จัดทำไม่ได้มีการคัดลอกมาจากที่ใดเลย เนื้อหาทั้งหมดถูกรวบรวมจากการพัฒนาในขั้นตอนต่างๆ ของการจัดทำโครงงาน หากมีส่วนใดที่จำเป็นต้องนำเอาข้อความจากผลงานของผู้อื่น หรือบุคคลอื่นใดที่ไม่ใช่ตัวข้าพเจ้า ข้าพเจ้าได้ทำอ้างอิงถึงเอกสารเหล่านั้นไว้อย่างเหมาะสม และขอรับรองว่ารายงานฉบับนี้ไม่เคยเสนอต่อสถาบันใดมาก่อน}
 \else
@@ -1316,8 +1316,8 @@ wish to left align your text}
 \vspace{2em}
 \begingroup
 \let\clearpage\relax
-\chapter*{ABSTRACT}
-\addcontentsline{toc}{chapter}{ABSTRACT}
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
 %\thispagestyle{empty}
 \endgroup
 }
